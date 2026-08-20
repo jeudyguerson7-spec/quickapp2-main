@@ -1,0 +1,34 @@
+{
+  "main": "electron-main.js",
+  "name": "quickapp-haiti",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @quickapp/web run dev",
+    "dev:web:clean": "npm --workspace @quickapp/web run dev:clean",
+    "dev:desktop": "npm --workspace @quickapp/desktop run dev",
+    "dev:pc": "powershell -NoProfile -Command \"Start-Process npm -ArgumentList 'run dev:web'; Start-Sleep -Seconds 5; npm run dev:desktop\"",
+    "logo:apply": "powershell -ExecutionPolicy Bypass -File .\\scripts\\apply-logo.ps1",
+    "dev:api": "npm --workspace @quickapp/api run start:dev",
+    "dev:mobile": "npm --workspace @quickapp/mobile run start",
+    "build": "npm run build -ws",
+    "dist:desktop": "npm run build && electron-builder --win --x64",
+    "dist:all": "npm run build && electron-builder",
+    "lint": "npm run lint -ws",
+    "test": "npm run test -ws"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.3.2",
+    "chart.js": "^4.5.1"
+  }
+}

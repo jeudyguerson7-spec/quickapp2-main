@@ -1,0 +1,15 @@
+{
+  "name": "quickapp-desktop",
+  "version": "1.0.0",
+  "main": "electron-main.js",
+  "description": "QuickApp Desktop (offline)",
+  "scripts": {
+    "build:web": "cd apps/web && npm run build && cd ../..",
+    "build:electron": "electron-builder --win --x64",
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^28.2.3",
+    "electron-builder": "^24.13.2"
+  }
+}

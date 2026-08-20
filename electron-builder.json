@@ -1,0 +1,17 @@
+{
+  "appId": "com.quickapp.desktop",
+  "productName": "QuickApp Desktop",
+  "directories": {
+    "buildResources": "assets",
+    "output": "dist"
+  },
+  "files": [
+    "electron-main.js",
+    "apps/web/.next/**",
+    "apps/web/public/**"
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "assets/icon.ico"
+  }
+}
